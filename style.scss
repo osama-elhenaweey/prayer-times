@@ -1,0 +1,127 @@
+$color-primary-light: rgb(184, 219, 211);
+$color-secondary: rgb(247, 231, 180);
+$color-primary-dark: rgb(104, 196, 175);
+$color-primary-medium: rgb(150, 234, 215);
+$color-secondary-light: rgb(242, 246, 195);
+$color-terinty: rgb(21, 67, 96);
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+html {
+    font-size: 62.25%;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+body {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: "Roboto", sans-serif;
+    background-color: $color-terinty;
+    background-image: url("data:image/svg+xml,%3Csvg width='44' height='12' viewBox='0 0 44 12' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M20 12v-2L0 0v10l4 2h16zm18 0l4-2V0L22 10v2h16zM20 0v8L4 0h16zm18 0L22 8V0h16z' fill='%2396ead7' fill-opacity='0.2' fill-rule='evenodd'/%3E%3C/svg%3E");
+    height: 100vh;
+}
+.main {
+    .heading {
+        text-align: center;
+        font-size: 3rem;
+        color: $color-secondary-light;
+        padding: 2rem;
+    }
+}
+.prayers-container {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    padding: 5.6em 2.8rem;
+    margin-top: 10rem;
+    margin-inline: 2rem;
+    // height: 300px;
+    column-gap: 1.8rem;
+    border-radius: 5px;
+
+    background-image: linear-gradient(
+        to right bottom,
+        $color-secondary,
+        $color-primary-dark
+    );
+    &__heading {
+        grid-column: 1/-1;
+        text-align: center;
+        margin: 0 0 3rem 0;
+        font-size: 2.4rem;
+        color: #212529;
+    }
+}
+.prayer {
+    background-image: linear-gradient(
+        to right bottom,
+        $color-terinty,
+        rgba($color-terinty, 0.8)
+    );
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.8rem;
+    border-radius: 5px;
+    padding: 2rem 1.4rem;
+    &-name {
+        background-color: $color-primary-light;
+        padding: 1rem 3.2rem;
+        border: 1px solid $color-primary-medium;
+        outline: 1px solid $color-primary-medium;
+        outline-offset: 2px;
+    }
+    &-time {
+        background-color: $color-primary-light;
+        padding: 1rem;
+        color: #212529;
+        margin-top: 2rem;
+        border: 1px solid $color-primary-medium;
+        outline: 1px solid $color-primary-medium;
+        outline-offset: 2px;
+    }
+}
+form {
+    label {
+        grid-column: 1/-1;
+        color: $color-secondary;
+        font-size: 1.8rem;
+        font-weight: 700;
+        margin-bottom: 1rem;
+    }
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-column: 2rem;
+    margin: 2rem;
+}
+.select-list {
+    width: 90%;
+    background-color: #212529;
+    padding: 2rem 3rem;
+    font-size: 1.4rem;
+    color: $color-secondary-light;
+    border: 1px solid $color-secondary;
+    border-radius: 5px;
+    outline: none;
+}
+@media (width<1000px) {
+    .prayers-container {
+        grid-template-columns: repeat(3, 1fr);
+
+        row-gap: 1rem;
+    }
+}
+@media (width<600px) {
+    .prayers-container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+@media (width<450px) {
+    html {
+        font-size: 48%;
+    }
+}
