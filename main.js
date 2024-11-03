@@ -73,7 +73,7 @@ selectElementCity.addEventListener("change", (event) => {
     console.log(theCity);
     axios
         .get(
-            `http://api.aladhan.com/v1/calendarByCity/${year}/${month}?city=${theCity}&country=${countrySelected}&method=1`
+            `https://api.aladhan.com/v1/calendarByCity/${year}/${month}?city=${theCity}&country=${countrySelected}&method=1`
         )
         .then(function (response) {
             // handle success
